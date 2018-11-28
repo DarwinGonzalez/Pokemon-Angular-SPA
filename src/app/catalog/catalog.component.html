@@ -1,0 +1,8 @@
+<h1>Cátalogo de Pokemón</h1>
+  <ul>
+      <li *ngFor="let item of pokemons$">
+        <ul>
+          <li>{{ item.name }} <img [src]=""></li>
+        </ul>
+      </li>
+  </ul>
