@@ -11,5 +11,8 @@ export class DataServiceService {
   getPokemonNames() {
     return this.http.get('https://pokeapi.co/api/v2/pokemon/');
   }
+  getPokemonImages(id) {
+    return this.http.get('https://pokeapi.co/api/v2/pokemon/' + id +"/");
+  }
 
 }

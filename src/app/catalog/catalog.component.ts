@@ -11,18 +11,22 @@ export class CatalogComponent implements OnInit {
 
   pokemons$: Array<any> = [];
   images$: Array<any> = [];
+  urlImagen: string;
+  contador = 1;
 
   constructor(private data: DataServiceService) { }
 
   ngOnInit() {
     this.data.getPokemonNames().subscribe( data => this.pokemons$ = data["results"]);
+    this.data.getPokemonImages(1).subscribe( data => this.images$ = data["sprites"]);
     console.log(this.pokemons$);
-    // this.getPokemonImages();
   }
 
-  // getPokemonImages() {
-  //   this.data.getPokemonNames().subscribe( data => this.pokemons$ = data["sprites"]);
-  //   console.log(this.images$);
-  // }
+  getPokemonImages(id) {
+    this.data.getPokemonImages(id).subscribe( data => this.urlImagen = data["sprites"].front_default);
+    console.log(this.images$);
+    this.contador++;
+    return this.urlImagen;
+  }
 
 }

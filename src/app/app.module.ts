@@ -16,6 +16,8 @@ import { AboutComponent } from './about/about.component';
 import { CatalogComponent } from './catalog/catalog.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { HttpClientModule } from '@angular/common/http';
+import { PokemonComponent } from './pokemon/pokemon.component';
+import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     ContactComponent,
     AboutComponent,
-    CatalogComponent
+    CatalogComponent,
+    PokemonComponent,
+    PokemonListComponent
   ],
   imports: [
     BrowserModule,
