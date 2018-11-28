@@ -1,0 +1,19 @@
+<nav>
+  <ul>
+    <li>
+      <a routerLink="" [class.activated] = "currentUrl== '/'" [class.hover]="mouseOvered" (mouseover)="mouseOvered=true" (mouseout)="mouseOvered=false">
+        <i class="material-icons">home</i>
+      </a>
+    </li>
+    <li>
+      <a routerLink="contacto" [class.activated] = "currentUrl == '/contacto'" [class.hover]="mouseOvere" (mouseover)="mouseOvere=true" (mouseout)="mouseOvere=false">
+        <i class="material-icons">supervised_user_circle</i>
+      </a>
+    </li>
+    <li>
+      <a routerLink="" [class.activated] = "currentUrl == ''" [class.hover]="mouseOver" (mouseover)="mouseOver=true" (mouseout)="mouseOver=false">
+        <i class="material-icons">message</i>
+      </a>
+    </li>
+  </ul>
+</nav>
