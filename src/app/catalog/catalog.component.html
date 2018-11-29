@@ -1,11 +1,11 @@
 <h1>Cátalogo de Pokemón</h1>
-<mat-grid-list cols="6" >
+<mat-grid-list cols="6" [@listStagger]="pokemons$">
     <mat-grid-tile *ngFor="let item of pokemons$; let i=index">
         <mat-card class="example-card" (click)="onHover(item)" [routerLink]= "['/details', id ]">
             <mat-card-header>
               <mat-card-title>{{ (item.name).charAt(0).toUpperCase() + (item.name).slice(1) }}</mat-card-title>
             </mat-card-header>
-            <img mat-card-image src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{((item.url).split('/').splice(6,7,1))[0] }}.png">
+            <img class="pokeImg" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{((item.url).split('/').splice(6,7,1))[0] }}.png" >
         </mat-card>
     </mat-grid-tile>
 </mat-grid-list>

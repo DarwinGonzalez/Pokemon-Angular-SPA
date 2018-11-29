@@ -1,22 +1,27 @@
 <nav>
   <ul>
     <li>
-      <a routerLink="" [class.activated] = "currentUrl== '/'" [class.hover]="mouseOvered" (mouseover)="mouseOvered=true" (mouseout)="mouseOvered=false">
+      <a routerLink="" [class.activated]="currentUrl== '/'" [class.hover]="mouseOvered" (mouseover)="mouseOvered=true" (mouseout)="mouseOvered=false">
         <i class="material-icons">home</i>
       </a>
     </li>
     <li>
-      <a routerLink="catalog" [class.activated] = "currentUrl == '/catalog'" [class.hover]="mouseOver" (mouseover)="mouseOver=true" (mouseout)="mouseOver=false">
+      <a routerLink="catalog" [class.activated]="currentUrl == '/catalog'" [class.hover]="mouseOver" (mouseover)="mouseOver=true" (mouseout)="mouseOver=false">
         <i class="material-icons">shop</i>
       </a>
     </li>
     <li>
-      <a routerLink="contacto" [class.activated] = "currentUrl == '/contacto'" [class.hover]="mouseOvere" (mouseover)="mouseOvere=true" (mouseout)="mouseOvere=false">
+      <a routerLink="contacto" [class.activated]="currentUrl == '/details'" [class.hover]="mouseOvere" (mouseover)="mouseOvere=true" (mouseout)="mouseOvere=false">
+        <i class="material-icons">library_books</i>
+      </a>
+    </li>
+    <li>
+      <a routerLink="contacto" [class.activated]="currentUrl == '/contacto'" [class.hover]="mouseOve" (mouseover)="mouseOve=true" (mouseout)="mouseOve=false">
         <i class="material-icons">supervised_user_circle</i>
       </a>
     </li>
     <li>
-      <a routerLink="about" [class.activated] = "currentUrl == '/about'" [class.hover]="mouseOver" (mouseover)="mouseOver=true" (mouseout)="mouseOver=false">
+      <a routerLink="about" [class.activated]="currentUrl == '/about'" [class.hover]="mouseO" (mouseover)="mouseO=true" (mouseout)="mouseO=false">
         <i class="material-icons">info</i>
       </a>
     </li>

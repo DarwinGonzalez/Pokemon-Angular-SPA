@@ -22,6 +22,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import {MatSliderModule} from '@angular/material/slider';
 import { HttpModule } from '@angular/http';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 import 'hammerjs';
 
@@ -49,7 +51,9 @@ import 'hammerjs';
     ReactiveFormsModule,
     FormsModule,
     MatSliderModule,
-    HttpModule
+    HttpModule,
+    FlexLayoutModule,
+    MatProgressSpinnerModule
   ],
   providers: [DataServiceService],
   bootstrap: [AppComponent]
