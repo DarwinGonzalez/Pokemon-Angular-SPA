@@ -1,6 +1,6 @@
 import { Pokemon } from './../shared/pokemon';
 import { Component, OnInit } from '@angular/core';
-
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-pokemon',
@@ -10,10 +10,26 @@ import { Component, OnInit } from '@angular/core';
 export class PokemonComponent implements OnInit {
 
   pokemon$: Pokemon;
+  idForm: FormGroup;
+  id: string;
 
-  constructor() { }
+  constructor(private fb: FormBuilder) {
+    this.crearFormulario();
+   }
 
   ngOnInit() {
+  }
+
+  crearFormulario() {
+    this.idForm = this.fb.group({
+      id:''
+    });
+  }
+
+  onSubmit() {
+    this.id = this.idForm.value;
+    console.log(this.id);
+    this.idForm.reset();
   }
 
 }

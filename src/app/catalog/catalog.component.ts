@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 export class CatalogComponent implements OnInit {
 
   pokemons$: Array<any> = [];
-  images$: Array<any> = [];
+  pokemonId$: number[] = [];
   urlImagen: string;
   contador = 1;
 
@@ -18,15 +18,14 @@ export class CatalogComponent implements OnInit {
 
   ngOnInit() {
     this.data.getPokemonNames().subscribe( data => this.pokemons$ = data["results"]);
-    this.data.getPokemonImages(1).subscribe( data => this.images$ = data["sprites"]);
-    console.log(this.pokemons$);
-  }
+    // this.data.getPokemonIds().subscribe(productoIds => this.pokemonId$ = productoIds);
 
-  getPokemonImages(id) {
-    this.data.getPokemonImages(id).subscribe( data => this.urlImagen = data["sprites"].front_default);
-    console.log(this.images$);
-    this.contador++;
-    return this.urlImagen;
+    // this.route.params.pipe(switchMap((params: Params) => {
+    //   this.visibilidad = 'oculto';
+    //   return this.productoService.getProducto(+params['id'])}
+    // ))
+    // .subscribe(producto => { this.producto = producto; this.productorest = producto; this.setPrevPost(producto.id); this.visibilidad = 'visible'});
+
   }
 
 }

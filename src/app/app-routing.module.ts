@@ -1,10 +1,11 @@
-import { CatalogComponent } from './catalog/catalog.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
+import { PokemonComponent } from './pokemon/pokemon.component';
+import { CatalogComponent } from './catalog/catalog.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'catalog',
     component: CatalogComponent
+  },
+  {
+    path: 'details',
+    component: PokemonComponent
   }
 ];
 

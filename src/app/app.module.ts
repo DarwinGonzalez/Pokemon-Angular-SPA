@@ -18,7 +18,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { HttpClientModule } from '@angular/common/http';
 import { PokemonComponent } from './pokemon/pokemon.component';
 import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import {MatSliderModule} from '@angular/material/slider';
+import 'hammerjs';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,10 @@ import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
     MatInputModule,
     MatIconModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatSliderModule
   ],
   providers: [DataServiceService],
   bootstrap: [AppComponent]

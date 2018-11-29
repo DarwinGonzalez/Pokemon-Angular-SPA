@@ -1,3 +1,28 @@
-<p>
-  pokemon works!
-</p>
+<h1>Buscador de pokemon mediante ID</h1>
+<mat-card>
+  <mat-card-content>
+    <form novalidate [formGroup]="idForm" (ngSubmit)="onSubmit()">
+
+      <p>
+        <mat-form-field class="half-width">
+          <input matInput formControlName="id" type="number">
+        </mat-form-field>
+      </p>
+
+      <button type="submit" [disabled]="idForm.invalid" mat-button class="background-primary text-floral-white">Submit</button>
+    </form>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="example-card" *ngIf="id != undefined">
+  <mat-card-header>
+    <!-- <div mat-card-avatar class="example-header-image"></div> -->
+    <!-- <mat-card-title>{{ (idForm.id) }}</mat-card-title> -->
+    <mat-card-title><strong>Pokemón con ID:</strong> {{ id.id }}</mat-card-title>
+  </mat-card-header>
+  <p>
+      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{id.id}}.png" width="20%" height="20%">
+      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/{{id.id}}.png" width="20%" height="20%">
+  </p>
+
+</mat-card>
