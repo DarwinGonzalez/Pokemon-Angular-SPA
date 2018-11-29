@@ -14,11 +14,11 @@
   </mat-card-content>
 </mat-card>
 
-<mat-card class="example-card" *ngIf="id != undefined">
+<mat-card class="example-card" *ngIf="id.id != undefined">
   <mat-card-header>
-    <!-- <div mat-card-avatar class="example-header-image"></div> -->
-    <!-- <mat-card-title>{{ (idForm.id) }}</mat-card-title> -->
-    <mat-card-title><strong>Pokemón con ID:</strong> {{ id.id }}</mat-card-title>
+     <div mat-card-avatar class="example-header-image"></div>
+     <mat-card-title *ngFor="let item of pokemon$"><strong>Nombre: </strong>{{ (item.name).charAt(0).toUpperCase() + (item.name).slice(1) }}</mat-card-title>
+    <mat-card-title><strong>Pokemón ID:</strong> {{ id.id }}</mat-card-title>
   </mat-card-header>
   <p>
       <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{id.id}}.png" width="20%" height="20%">

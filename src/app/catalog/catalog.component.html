@@ -1,9 +1,8 @@
 <h1>Cátalogo de Pokemón</h1>
 <mat-grid-list cols="6" >
-    <mat-grid-tile *ngFor="let item of pokemons$; let i=index" >
-        <mat-card class="example-card" >
+    <mat-grid-tile *ngFor="let item of pokemons$; let i=index">
+        <mat-card class="example-card" (click)="onHover(item)" [routerLink]= "['/details', id ]">
             <mat-card-header>
-              <!-- <div mat-card-avatar class="example-header-image"></div> -->
               <mat-card-title>{{ (item.name).charAt(0).toUpperCase() + (item.name).slice(1) }}</mat-card-title>
             </mat-card-header>
             <img mat-card-image src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{((item.url).split('/').splice(6,7,1))[0] }}.png">

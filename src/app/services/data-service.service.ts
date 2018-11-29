@@ -1,7 +1,7 @@
+import { Pokemon } from './../shared/pokemon';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
 
 @Injectable({
   providedIn: 'root'
@@ -16,10 +16,4 @@ export class DataServiceService {
   getPokemonImages(id) {
     return this.http.get('https://pokeapi.co/api/v2/pokemon/' + id +"/");
   }
-
-  // getPokemonIds(): Observable<number[] | any> {
-  //     {{((item.url).split('/').splice(6,7,1))[0] }}
-  //     return this.http.get( data => this.pokeIds = data["results"]);
-  // }
-
 }

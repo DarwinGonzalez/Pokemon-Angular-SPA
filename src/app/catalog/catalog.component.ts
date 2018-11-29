@@ -12,20 +12,21 @@ export class CatalogComponent implements OnInit {
   pokemons$: Array<any> = [];
   pokemonId$: number[] = [];
   urlImagen: string;
-  contador = 1;
+  id: string = "";
 
   constructor(private data: DataServiceService) { }
 
   ngOnInit() {
-    this.data.getPokemonNames().subscribe( data => this.pokemons$ = data["results"]);
-    // this.data.getPokemonIds().subscribe(productoIds => this.pokemonId$ = productoIds);
-
-    // this.route.params.pipe(switchMap((params: Params) => {
-    //   this.visibilidad = 'oculto';
-    //   return this.productoService.getProducto(+params['id'])}
-    // ))
-    // .subscribe(producto => { this.producto = producto; this.productorest = producto; this.setPrevPost(producto.id); this.visibilidad = 'visible'});
-
+    this.data.getPokemonNames().subscribe(data => this.pokemons$ = data["results"]);
   }
 
+  addClass(id: any) {
+    this.id = id;
+  }
+
+  onHover(item){
+    this.id = ((item.url).split('/').splice(6,7,1))[0];
+    console.log(((item.url).split('/').splice(6,7,1))[0]);
+    return true;
+  }
 }

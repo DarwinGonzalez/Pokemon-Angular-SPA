@@ -21,6 +21,8 @@ import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import {MatSliderModule} from '@angular/material/slider';
+import { HttpModule } from '@angular/http';
+
 import 'hammerjs';
 
 @NgModule({
@@ -46,7 +48,8 @@ import 'hammerjs';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
-    MatSliderModule
+    MatSliderModule,
+    HttpModule
   ],
   providers: [DataServiceService],
   bootstrap: [AppComponent]
