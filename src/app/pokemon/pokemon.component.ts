@@ -40,7 +40,7 @@ export class PokemonComponent implements OnInit {
   pokemon$: Array<any> = [];
   types$: Array<any> = [];
   idForm: FormGroup;
-  id: string = "";
+  id: string;
   name: string = "";
 
 
@@ -49,7 +49,10 @@ export class PokemonComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.id = "1";
+    this.id = this.route.snapshot.params['id'];
+    console.log(this.id);
+    this.route.params.subscribe(params => this.id = params['id']);
+    this.data.getPokemonImages(this.id).subscribe(data => this.pokemon$ = data["results"]);
   }
 
   crearFormulario() {

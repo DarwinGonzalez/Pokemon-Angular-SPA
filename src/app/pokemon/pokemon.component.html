@@ -1,4 +1,4 @@
-<h1>Buscador de pokemóns </h1>
+<h1>Buscador de pokemóns</h1>
 <mat-card>
     <mat-card-content>Introduzca el ID del pokemón deseado:</mat-card-content>
   <mat-card-content>
@@ -23,7 +23,7 @@
     <mat-card-title><strong>Número Pokédex:</strong> #{{ id.id }}</mat-card-title>
     <mat-card-title><strong>Tipos</strong></mat-card-title>
     <mat-card-title *ngFor="let item of types$">
-      <li *ngIf="item.name != 'undefined'">{{ (item.name).charAt(0).toUpperCase() + (item.name).slice(1) }}</li>
+      <li>{{ (item.name).charAt(0).toUpperCase() + (item.name).slice(1) }}</li>
     </mat-card-title>
 
   </mat-card-header>

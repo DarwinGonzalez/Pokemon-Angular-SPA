@@ -24,10 +24,10 @@ const routes: Routes = [
     path: 'catalog',
     component: CatalogComponent
   },
-  {
-    path: 'details',
-    component: PokemonComponent
-  },
+  // {
+  //   path: 'details',
+  //   component: PokemonComponent
+  // },
   {
     path: 'details/:id',
     component: PokemonComponent
