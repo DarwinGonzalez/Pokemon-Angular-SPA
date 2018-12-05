@@ -42,6 +42,8 @@ export class CatalogComponent implements OnInit {
 
   ngOnInit() {
     this.data.getPokemonNames().subscribe(data => this.pokemons$ = data["results"]);
+    // this.id = ((item.url).split('/').splice(6, 7, 1))[0];
+    console.log(this.id);
   }
 
   addClass(id: any) {
@@ -51,6 +53,6 @@ export class CatalogComponent implements OnInit {
   onHover(item) {
     this.id = ((item.url).split('/').splice(6, 7, 1))[0];
     console.log(((item.url).split('/').splice(6, 7, 1))[0]);
-    return true;
+    return this.id;
   }
 }
