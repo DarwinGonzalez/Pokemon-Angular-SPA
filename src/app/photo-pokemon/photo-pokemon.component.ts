@@ -58,4 +58,39 @@ export class PhotoPokemonComponent implements OnInit {
     this.img = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/" + this.id + ".png"
   }
 
+  nextID() {
+    var aux = parseInt(this.id) + 1;
+    if(aux >= 10090){
+      aux = 1;
+      this.id = aux.toString();
+      this.reloadPokemon();
+    }
+    else{
+      this.id = aux.toString();
+      this.reloadPokemon();
+    }
+  }
+
+  prevID() {
+    var aux = parseInt(this.id) - 1;
+    if(aux >= 1){
+      this.id = aux.toString();
+      this.reloadPokemon();
+    }
+    else{
+      aux = 10090;
+      this.id = aux.toString();
+      this.reloadPokemon();
+    }
+
+  }
+
+  reloadPokemon(){
+    this.getName();
+    this.getTypes();
+    this.getAbilities();
+    this.frontImg();
+    this.setParametersNull();
+  }
+
 }
