@@ -80,4 +80,5 @@ export class PokemonComponent implements OnInit {
     this.data.getPokemonImages(Object.values(this.id)[0]).subscribe(data => this.types$.push(data["types"][1]["type"]));
   }
 
+
 }

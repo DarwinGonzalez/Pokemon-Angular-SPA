@@ -9,17 +9,18 @@
     </div>
     <div class="divider"></div>
     <div class="stats-display">
-      <h2>Charmander</h2>
-      <h3>Abilities</h3>
+      <h1>Pokedex</h1>
+      <h2>Pokemón ID: #{{ id }}</h2>
+      <br>
+      <h3>Type</h3>
       <ul>
-        <li>Solar-power</li>
-        <li>Blaze</li>
+        <li>{{ types1.charAt(0).toUpperCase() + types1.slice(1) }}</li>
+        <li>{{ types2.charAt(0).toUpperCase() + types2.slice(1) }}</li>
       </ul>
       <h3>Moves</h3>
       <ul>
-        <li>dragon-rage</li>
-        <li>dragon-breath</li>
-        <li>dragon-claw</li>
+        <li>{{ moves1.charAt(0).toUpperCase() + moves1.slice(1) }}</li>
+        <li>{{ moves2.charAt(0).toUpperCase() + moves2.slice(1) }}</li>
       </ul>
     </div>
     <div class="botom-actions">
@@ -34,7 +35,7 @@
         <div class="cross-button center"> </div>
       </div>
     </div>
-    <div class="input-pad"><input /></div>
+
 
     <div class="bottom-modes">
 

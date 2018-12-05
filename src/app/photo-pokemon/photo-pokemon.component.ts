@@ -9,7 +9,11 @@ import { DataServiceService } from './../services/data-service.service';
 })
 export class PhotoPokemonComponent implements OnInit {
   id: string;
-  pokemon$: Array<any> = [];
+  pokemonName: string;
+  types1: string;
+  types2: string;
+  moves1: string;
+  moves2: string;
 
   constructor(private route: ActivatedRoute, private data: DataServiceService) { }
 
@@ -17,7 +21,23 @@ export class PhotoPokemonComponent implements OnInit {
     this.id = this.route.snapshot.params['id'];
     console.log(this.id);
     this.route.params.subscribe(params => this.id = params['id']);
-    this.data.getPokemonImages(this.id).subscribe(data => this.pokemon$ = data["results"]);
+    this.getName();
+    this.getTypes();
+    this.getAbilities();
   }
 
+  getName() {
+    this.data.getPokemonImages(Object.values(this.id)[0]).subscribe(data => this.pokemonName = (data["forms"][0].name));
+    console.log(this.pokemonName);
+  }
+
+  getTypes() {
+    this.data.getPokemonImages(Object.values(this.id)[0]).subscribe(data => this.types1 = data["types"][0]["type"].name);
+    this.data.getPokemonImages(Object.values(this.id)[0]).subscribe(data => this.types2 = data["types"][1]["type"].name);
+  }
+
+  getAbilities() {
+    this.data.getPokemonImages(Object.values(this.id)[0]).subscribe(data => this.moves1 = data["abilities"][0]["ability"].name);
+    this.data.getPokemonImages(Object.values(this.id)[0]).subscribe(data => this.moves2 = data["abilities"][1]["ability"].name);
+  }
 }

@@ -42,7 +42,6 @@ export class CatalogComponent implements OnInit {
 
   ngOnInit() {
     this.data.getPokemonNames().subscribe(data => this.pokemons$ = data["results"]);
-    // this.id = ((item.url).split('/').splice(6, 7, 1))[0];
     console.log(this.id);
   }
 
