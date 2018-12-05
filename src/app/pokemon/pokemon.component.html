@@ -35,3 +35,23 @@
   </p>
 
 </mat-card>
+
+<!-- <mat-card class="example-card" *ngIf="id != undefined">
+  <mat-card-header>
+    <mat-card-title *ngFor="let item of pokemon$" [@listStagger]="pokemon$"><strong>Nombre: </strong>
+      {{ (item.name).charAt(0).toUpperCase() + (item.name).slice(1) }}</mat-card-title>
+    <mat-card-title><strong>Número Pokédex:</strong> #{{ id }}</mat-card-title>
+    <mat-card-title><strong>Tipos</strong></mat-card-title>
+    <mat-card-title *ngFor="let item of types$">
+      <li>{{ (item.name).charAt(0).toUpperCase() + (item.name).slice(1) }}</li>
+    </mat-card-title>
+
+  </mat-card-header>
+  <p>
+    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{id}}.png" width="20%"
+      height="20%">
+    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/{{id}}.png" width="20%"
+      height="20%">
+  </p>
+
+</mat-card> -->

@@ -6,6 +6,7 @@ import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { PokemonComponent } from './pokemon/pokemon.component';
 import { CatalogComponent } from './catalog/catalog.component';
+import { PhotoPokemonComponent } from './photo-pokemon/photo-pokemon.component';
 
 const routes: Routes = [
   {
@@ -24,13 +25,13 @@ const routes: Routes = [
     path: 'catalog',
     component: CatalogComponent
   },
-  // {
-  //   path: 'details',
-  //   component: PokemonComponent
-  // },
   {
-    path: 'details/:id',
+    path: 'details',
     component: PokemonComponent
+  },
+  {
+    path: 'photo/:id',
+    component: PhotoPokemonComponent
   }
 ];
 

@@ -26,6 +26,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 import 'hammerjs';
+import { PhotoPokemonComponent } from './photo-pokemon/photo-pokemon.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import 'hammerjs';
     AboutComponent,
     CatalogComponent,
     PokemonComponent,
-    PokemonListComponent
+    PokemonListComponent,
+    PhotoPokemonComponent
   ],
   imports: [
     BrowserModule,
