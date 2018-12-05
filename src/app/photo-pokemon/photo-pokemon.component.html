@@ -5,22 +5,23 @@
       <button></button>
     </div>
     <div class="camera-display">
-      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{id}}.png"/>
+      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{ id }}.png"/>
     </div>
     <div class="divider"></div>
     <div class="stats-display">
       <h1>Pokedex</h1>
+      <h2>{{ pokemonName.charAt(0).toUpperCase() + pokemonName.slice(1) }}</h2>
       <h2>Pokemón ID: #{{ id }}</h2>
       <br>
       <h3>Type</h3>
       <ul>
-        <li>{{ types1.charAt(0).toUpperCase() + types1.slice(1) }}</li>
-        <li>{{ types2.charAt(0).toUpperCase() + types2.slice(1) }}</li>
+        <li *ngIf="types1[0] != undefined">{{ types1[0].charAt(0).toUpperCase() + types1[0].slice(1) }}</li>
+        <li *ngIf="types2[0] != undefined">{{ types2[0].charAt(0).toUpperCase() + types2[0].slice(1) }}</li>
       </ul>
       <h3>Moves</h3>
       <ul>
-        <li>{{ moves1.charAt(0).toUpperCase() + moves1.slice(1) }}</li>
-        <li>{{ moves2.charAt(0).toUpperCase() + moves2.slice(1) }}</li>
+        <li *ngIf="moves1[0] != undefined">{{ moves1[0].charAt(0).toUpperCase() + moves1[0].slice(1) }}</li>
+        <li *ngIf="moves2[0] != undefined">{{ moves2[0].charAt(0).toUpperCase() + moves2[0].slice(1) }}</li>
       </ul>
     </div>
     <div class="botom-actions">

@@ -10,10 +10,10 @@ import { DataServiceService } from './../services/data-service.service';
 export class PhotoPokemonComponent implements OnInit {
   id: string;
   pokemonName: string;
-  types1: string;
-  types2: string;
-  moves1: string;
-  moves2: string;
+  types1: Array<string> = [];
+  types2: Array<string> = [];
+  moves1: Array<string> = [];
+  moves2: Array<string> = [];
 
   constructor(private route: ActivatedRoute, private data: DataServiceService) { }
 
@@ -24,20 +24,27 @@ export class PhotoPokemonComponent implements OnInit {
     this.getName();
     this.getTypes();
     this.getAbilities();
+    this.setParametersNull()
   }
 
   getName() {
-    this.data.getPokemonImages(Object.values(this.id)[0]).subscribe(data => this.pokemonName = (data["forms"][0].name));
-    console.log(this.pokemonName);
+    this.data.getPokemonImages(this.id).subscribe(data => this.pokemonName = (data["forms"][0].name));
   }
 
   getTypes() {
-    this.data.getPokemonImages(Object.values(this.id)[0]).subscribe(data => this.types1 = data["types"][0]["type"].name);
-    this.data.getPokemonImages(Object.values(this.id)[0]).subscribe(data => this.types2 = data["types"][1]["type"].name);
+    this.data.getPokemonImages(this.id).subscribe(data => this.types1.push(data["types"][0]["type"].name));
+    this.data.getPokemonImages(this.id).subscribe(data => this.types2.push(data["types"][1]["type"].name));
   }
 
   getAbilities() {
-    this.data.getPokemonImages(Object.values(this.id)[0]).subscribe(data => this.moves1 = data["abilities"][0]["ability"].name);
-    this.data.getPokemonImages(Object.values(this.id)[0]).subscribe(data => this.moves2 = data["abilities"][1]["ability"].name);
+    this.data.getPokemonImages(this.id).subscribe(data => this.moves1.push(data["moves"][0]["move"].name));
+    this.data.getPokemonImages(this.id).subscribe(data => this.moves2.push(data["moves"][1]["move"].name));
+  }
+
+  setParametersNull(){
+    this.moves1 = [];
+    this.moves2 = [];
+    this.types1 = [];
+    this.types2 = [];
   }
 }
