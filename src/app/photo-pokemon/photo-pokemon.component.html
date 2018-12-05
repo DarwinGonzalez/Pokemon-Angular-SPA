@@ -5,7 +5,7 @@
       <button></button>
     </div>
     <div class="camera-display">
-      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{ id }}.png"/>
+      <img src="{{img}}"/>
     </div>
     <div class="divider"></div>
     <div class="stats-display">
@@ -45,8 +45,8 @@
         <button class="level-button"></button>
         <button class="level-button"></button>
 
-        <button class="pokedex-mode black-button">Pokedex</button>
-        <button class="game-mode black-button">Game</button>
+        <button class="pokedex-mode black-button" (click)="frontImg()">Front</button>
+        <button class="game-mode black-button" (click)="backImag()">Back</button>
 
     </div>
 

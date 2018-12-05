@@ -14,6 +14,7 @@ export class PhotoPokemonComponent implements OnInit {
   types2: Array<string> = [];
   moves1: Array<string> = [];
   moves2: Array<string> = [];
+  img: string;
 
   constructor(private route: ActivatedRoute, private data: DataServiceService) { }
 
@@ -24,7 +25,8 @@ export class PhotoPokemonComponent implements OnInit {
     this.getName();
     this.getTypes();
     this.getAbilities();
-    this.setParametersNull()
+    this.frontImg();
+    this.setParametersNull();
   }
 
   getName() {
@@ -47,4 +49,13 @@ export class PhotoPokemonComponent implements OnInit {
     this.types1 = [];
     this.types2 = [];
   }
+
+  frontImg(){
+    this.img =  "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + this.id +".png"
+  }
+
+  backImag(){
+    this.img = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/" + this.id + ".png"
+  }
+
 }
