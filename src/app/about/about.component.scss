@@ -1,5 +1,12 @@
-.example-fill-remaining-space {
-    /* This fills the remaining space, by using flexbox.
-       Every toolbar row uses a flexbox row layout. */
-    flex: 1 1 auto;
-  }
+.headerImg {
+   width: 50%
+}
+
+.headerImgA {
+   height: 60%
+}
+
+.headerImgP {
+   width: 10%;
+   height: 30%;
+}
