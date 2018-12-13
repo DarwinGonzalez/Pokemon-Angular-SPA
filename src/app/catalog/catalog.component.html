@@ -1,6 +1,6 @@
 <h1>Cátalogo de Pokemón</h1>
 <mat-grid-list cols="6" [@listStagger]="pokemons$">
-    <mat-grid-tile *ngFor="let item of pokemons$; let i=index">
+    <mat-grid-tile *ngFor="let item of pokemons$ | slice:0:10000; let i=index;">
         <mat-card class="example-card" (click)="onHover(item)" [routerLink]= "['/photo', onHover(item) ]">
             <mat-card-header>
               <mat-card-title>{{ (item.name).charAt(0).toUpperCase() + (item.name).slice(1) }}</mat-card-title>
