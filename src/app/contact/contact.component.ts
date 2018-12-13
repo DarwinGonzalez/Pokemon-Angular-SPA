@@ -33,7 +33,7 @@ export class ContactComponent implements OnInit {
     'nombre': {
       'required': 'El nombre es obligatorio.',
 
-      'minlength': 'El nombre debe tener una longitud mÌnima de 2 caracteres.',
+      'minlength': 'El nombre debe tener una longitud mínima de 2 caracteres.',
 
       'maxlength': 'El nombre no puede exceder de 25 caracteres.'
     },
@@ -42,16 +42,16 @@ export class ContactComponent implements OnInit {
 
       'required': 'Los apellidos son obligatorios.',
 
-      'minlength': 'Los apellidos deben tener una longitud mÌnima de 2 caracteres.',
+      'minlength': 'Los apellidos deben tener una longitud mínima de 2 caracteres.',
 
       'maxlength': 'Los apellidos no pueden exceder de 25 caracteres.'
     },
 
     'telefono': {
 
-      'required': 'El n˙mero de teléfono es obligatorio.',
+      'required': 'El número de teléfono es obligatorio.',
 
-      'pattern': 'El n˙mero de teléfono sólo puede contener números.'
+      'pattern': 'El número de teléfono sólo puede contener números.'
     },
 
     'email': {
@@ -72,7 +72,7 @@ export class ContactComponent implements OnInit {
     this.consultaForm = this.fb.group({
       nombre: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(25)]],
       apellidos: ['', [Validators.required] ],
-      telefono: [0, [Validators.required, Validators.pattern]],
+      telefono: ['',Validators.required, Validators.pattern],
       email: ['', [Validators.required,Validators.email]],
       contactar: false,
       mensaje: ''

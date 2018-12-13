@@ -1,7 +1,6 @@
 import { DataServiceService } from './../services/data-service.service';
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { trigger, style, transition, animate, keyframes, query, stagger } from '@angular/animations';
+import { trigger, style, transition, animate, query, stagger } from '@angular/animations';
 
 @Component({
   selector: 'app-catalog',

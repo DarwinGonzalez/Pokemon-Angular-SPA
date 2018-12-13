@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 
-import { map, catchError } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
-// import { baseURL } from '../compartido/baseurl';
 import { ProcesaHTTPMsjService } from './procesa-httpmsj.service';
 import { HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';

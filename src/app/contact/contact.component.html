@@ -2,7 +2,7 @@
 
   <div fxFlex>
     <div>
-      <h3>Contacto</h3>
+      <h2>Contacto</h2>
       <hr>
     </div>
   </div>
@@ -13,70 +13,63 @@
     <form novalidate [formGroup]="consultaForm" (ngSubmit)="onSubmit()">
 
       <p>
-
+        <label for="nombre">Nombre:</label>
+        <br>
         <mat-form-field class="half-width">
-
-          <input matInput formControlName="nombre" placeholder="Nombre" type="text" required>
-          <span [hidden]="!(erroresForm.nombre)">
-            {{ erroresForm.nombre }}</span>
-
+          <input matInput formControlName="nombre" type="text" required>
         </mat-form-field>
+        <span [hidden]="!(erroresForm.nombre)">
+          {{ erroresForm.nombre }}</span>
 
+        <br>
+        <br>
 
+        <label for="telefono">Apellidos:</label>
+        <br>
         <mat-form-field class="half-width">
-
-          <input matInput formControlName="apellidos" placeholder="Apellidos" type="text" required>
-          <span [hidden]="!(erroresForm.apellidos)">
-            {{erroresForm.apellidos}}</span>
-
+          <input matInput formControlName="apellidos" type="text" required>
         </mat-form-field>
+        <span [hidden]="!(erroresForm.apellidos)">
+          {{erroresForm.apellidos}}</span>
+
       </p>
-
 
       <p>
 
+        <label for="telefono">Número teléfono:</label>
+        <br>
         <mat-form-field class="half-width">
-
-          <input matInput formControlName="telefono" placeholder="Teléfono" type="tel" pattern="[0-9]*" required>
-          <span [hidden]="!(erroresForm.telefono)">
-            {{erroresForm.telefono}}</span>
-
+          <input matInput formControlName="telefono" type="tel" pattern="[0-9]*" required>
         </mat-form-field>
+        <span [hidden]="!(erroresForm.telefono)">
+          {{erroresForm.telefono}}</span>
 
+        <br>
+        <br>
 
+        <label for="email">Correo Electrónico:</label>
+        <br>
         <mat-form-field class="half-width">
-
-          <input matInput formControlName="email" placeholder="Email" type="email" email required>
-          <span [hidden]="!(erroresForm.email)">
-            {{erroresForm.email}}</span>
+          <input matInput formControlName="email" type="email" email required>
         </mat-form-field>
+        <span [hidden]="!(erroresForm.email)">
+          {{erroresForm.email}}</span>
       </p>
-
 
       <table class="form-size">
-
         <td>
-
           <mat-slide-toggle formControlName="contactar">¿Quieres que contactemos contigo?</mat-slide-toggle>
-
         </td>
-
       </table>
 
-
       <p>
-
+        <label for="email">¿Quieres dejar un comentario o sugerencia?: </label>
+        <br>
         <mat-form-field class="full-width">
-
-          <textarea matInput formControlName="mensaje" placeholder="Tu Comentario" rows=12></textarea>
-
+          <textarea matInput formControlName="mensaje" rows=12></textarea>
         </mat-form-field>
-
       </p>
-
-
       <button type="submit" mat-button class="background-primary text-floral-white">Submit</button>
-
     </form>
 
   </div>
