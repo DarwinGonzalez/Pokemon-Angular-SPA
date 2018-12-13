@@ -1,3 +1,82 @@
-<p>
-  contact works!
-</p>
+<div class="container" fxLayout="column" fxLayoutGap="10px">
+
+  <div fxFlex>
+    <div>
+      <h3>Contacto</h3>
+      <hr>
+    </div>
+  </div>
+
+  <div fxFlex fxFlexOffset="20px" class="form-size">
+
+    <h3>Pregúntanos lo que quieras</h3>
+    <form novalidate [formGroup]="consultaForm" (ngSubmit)="onSubmit()">
+
+      <p>
+
+        <mat-form-field class="half-width">
+
+          <input matInput formControlName="nombre" placeholder="Nombre" type="text" required>
+          <span [hidden]="!(erroresForm.nombre)">
+            {{ erroresForm.nombre }}</span>
+
+        </mat-form-field>
+
+
+        <mat-form-field class="half-width">
+
+          <input matInput formControlName="apellidos" placeholder="Apellidos" type="text" required>
+          <span [hidden]="!(erroresForm.apellidos)">
+            {{erroresForm.apellidos}}</span>
+
+        </mat-form-field>
+      </p>
+
+
+      <p>
+
+        <mat-form-field class="half-width">
+
+          <input matInput formControlName="telefono" placeholder="Teléfono" type="tel" pattern="[0-9]*" required>
+          <span [hidden]="!(erroresForm.telefono)">
+            {{erroresForm.telefono}}</span>
+
+        </mat-form-field>
+
+
+        <mat-form-field class="half-width">
+
+          <input matInput formControlName="email" placeholder="Email" type="email" email required>
+          <span [hidden]="!(erroresForm.email)">
+            {{erroresForm.email}}</span>
+        </mat-form-field>
+      </p>
+
+
+      <table class="form-size">
+
+        <td>
+
+          <mat-slide-toggle formControlName="contactar">¿Quieres que contactemos contigo?</mat-slide-toggle>
+
+        </td>
+
+      </table>
+
+
+      <p>
+
+        <mat-form-field class="full-width">
+
+          <textarea matInput formControlName="mensaje" placeholder="Tu Comentario" rows=12></textarea>
+
+        </mat-form-field>
+
+      </p>
+
+
+      <button type="submit" mat-button class="background-primary text-floral-white">Submit</button>
+
+    </form>
+
+  </div>

@@ -24,6 +24,8 @@ import {MatSliderModule} from '@angular/material/slider';
 import { HttpModule } from '@angular/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatSelectModule} from '@angular/material/select';
 
 import 'hammerjs';
 import { PhotoPokemonComponent } from './photo-pokemon/photo-pokemon.component';
@@ -55,7 +57,9 @@ import { PhotoPokemonComponent } from './photo-pokemon/photo-pokemon.component';
     MatSliderModule,
     HttpModule,
     FlexLayoutModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatSlideToggleModule,
+    MatSelectModule
   ],
   providers: [DataServiceService],
   bootstrap: [AppComponent]
