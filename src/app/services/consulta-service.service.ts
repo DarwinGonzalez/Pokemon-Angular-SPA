@@ -24,7 +24,6 @@ export class ConsultaServiceService {
 
   enviarConsulta(consulta): Observable<Consulta> {
     let aux = JSON.stringify(consulta);
-    localStorage.setItem(consulta.nombre, aux);
     return this.http.post<Consulta>('https://proyectofinal-3a237.firebaseio.com/contacto.json', aux, httpOptions)
       .pipe(catchError(this.procesaHttpmsjService.gestionError));
 
