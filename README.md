@@ -1,4 +1,9 @@
 #   Trabajo final Angular
+<p align="center">
+<img src="https://github.com/DarwinGonzalez/proyectoAngular/blob/master/src/assets/images/Logo_de_Pokemon.png?raw=true" width="40%">
+<img src="https://github.com/DarwinGonzalez/proyectoAngular/blob/master/src/assets/images/plus.png?raw=true" width="5%" height="5%">
+<img src="https://github.com/DarwinGonzalez/proyectoAngular/blob/master/src/assets/images/Angular_full_color_logo.png?raw=true" width="15%" height="15%">
+</p>
 
 Desarrollo de una SPA (Single page Application), dentro de la cual tenemos un sidebar o barra lateral mediante la cual podremos acceder a las diferentes partes y componentes de la misma, en función de las acciones de usuario.
 
@@ -6,11 +11,11 @@ Así pues, se trata de un prototipo de plataforma la cuál recoge datos de una A
 
 Entre sus funciones a destacar se encuentra la posibilidad de crear un equipo pokémon, catálogo de todos los pokémon disponibles en la API, ficha técnica de cada uno de los pokémon (nombre, ID, movimientos, tipo...), posibilidad de contacto mediante un formulario, formulario reactivo de búsqueda de pokémon mediante su ID de la pokédex,...
 
-* Catálogo pokémon
+* Catálogo pokémon <img src="https://github.com/DarwinGonzalez/proyectoAngular/blob/master/src/assets/images/pokeball.png?raw=true" width="20px" height="22px">
 
 ![](https://github.com/DarwinGonzalez/proyectoAngular/blob/master/src/assets/images/catalog.gif?raw=true)
 
-* Ficha técnica en Pokédex
+* Ficha técnica en Pokédex <img src="https://github.com/DarwinGonzalez/proyectoAngular/blob/master/src/assets/images/pokeball.png?raw=true" width="20px" height="22px">
 
 ![](https://github.com/DarwinGonzalez/proyectoAngular/blob/master/src/assets/images/itempokedex.gif?raw=true)
 
