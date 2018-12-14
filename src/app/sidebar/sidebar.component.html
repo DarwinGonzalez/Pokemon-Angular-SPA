@@ -1,27 +1,32 @@
 <nav>
   <ul>
     <li>
-      <a routerLink="" [class.activated]="currentUrl== '/'" [class.hover]="mouseOvered" (mouseover)="mouseOvered=true" (mouseout)="mouseOvered=false">
+      <a routerLink="" [class.activated]="currentUrl== '/'" [class.hover]="link1" (mouseover)="link1=true" (mouseout)="link1=false">
         <i class="material-icons">home</i>
       </a>
     </li>
     <li>
-      <a routerLink="catalog" [class.activated]="currentUrl == '/catalog'" [class.hover]="mouseOver" (mouseover)="mouseOver=true" (mouseout)="mouseOver=false">
+      <a routerLink="catalog" [class.activated]="currentUrl == '/catalog'" [class.hover]="link2" (mouseover)="link2=true" (mouseout)="link2=false">
         <i class="material-icons">shop</i>
       </a>
     </li>
     <li>
-      <a routerLink="details" [class.activated]="currentUrl == '/details'" [class.hover]="mouseOvere" (mouseover)="mouseOvere=true" (mouseout)="mouseOvere=false">
+      <a routerLink="details" [class.activated]="currentUrl == '/details'" [class.hover]="link3" (mouseover)="link3=true" (mouseout)="link3=false">
         <i class="material-icons">library_books</i>
       </a>
     </li>
     <li>
-      <a routerLink="contacto" [class.activated]="currentUrl == '/contacto'" [class.hover]="mouseOve" (mouseover)="mouseOve=true" (mouseout)="mouseOve=false">
+        <a routerLink="team" [class.activated]="currentUrl == '/team'" [class.hover]="link4" (mouseover)="link4=true" (mouseout)="link4=false">
+          <i class="material-icons">trip_origin</i>
+        </a>
+    </li>
+    <li>
+      <a routerLink="contacto" [class.activated]="currentUrl == '/contacto'" [class.hover]="link5" (mouseover)="link5=true" (mouseout)="link5=false">
         <i class="material-icons">supervised_user_circle</i>
       </a>
     </li>
     <li>
-      <a routerLink="about" [class.activated]="currentUrl == '/about'" [class.hover]="mouseO" (mouseover)="mouseO=true" (mouseout)="mouseO=false">
+      <a routerLink="about" [class.activated]="currentUrl == '/about'" [class.hover]="link6" (mouseover)="link6=true" (mouseout)="link6=false">
         <i class="material-icons">info</i>
       </a>
     </li>

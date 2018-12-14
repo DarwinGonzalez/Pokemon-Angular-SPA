@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { PokemonComponent } from './pokemon/pokemon.component';
 import { CatalogComponent } from './catalog/catalog.component';
 import { PhotoPokemonComponent } from './photo-pokemon/photo-pokemon.component';
+import { EquipoPokemonComponent } from './equipo-pokemon/equipo-pokemon.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: 'photo/:id',
     component: PhotoPokemonComponent
+  },
+  {
+    path: 'team',
+    component: EquipoPokemonComponent
   }
 ];
 
