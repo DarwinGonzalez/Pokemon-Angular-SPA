@@ -9,6 +9,9 @@ Entre sus funciones a destacar se encuentra la posibilidad de crear un equipo po
 * Catálogo pokémon
 ![](https://github.com/DarwinGonzalez/proyectoAngular/blob/master/src/assets/images/catalog.gif?raw=true)
 
+* Ficha técnica en Pokédex
+![]()
+
 
 ## Construido con  🛠️  📦
 
