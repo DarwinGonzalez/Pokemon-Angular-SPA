@@ -45,7 +45,6 @@ export class Pokemon {
         return this.move2;
     }
 
-    ///
     setId(id) {
         this.id = id;
     }

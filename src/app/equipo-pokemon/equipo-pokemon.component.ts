@@ -1,5 +1,6 @@
 import { Pokemon } from './../shared/pokemon';
 import { Component, OnInit } from '@angular/core';
+import { isNgTemplate } from '@angular/compiler';
 
 @Component({
   selector: 'app-equipo-pokemon',
@@ -17,7 +18,7 @@ export class EquipoPokemonComponent implements OnInit {
   ngOnInit() {
     console.log(this.obtainAllLocalStorage());
     this.pokemons$ = this.obtainAllLocalStorage();
-    this.crearPokemons();
+    this.createPokemons();
   }
 
   obtainAllLocalStorage() {
@@ -37,12 +38,17 @@ export class EquipoPokemonComponent implements OnInit {
     return json;
   }
 
-  crearPokemons() {
+  createPokemons() {
 
     for(let i =0; i < this.pokemons$.length; i++){
       this.pokemonTeam[i] = new Pokemon(this.pokemons$[i].id, this.pokemons$[i].name, this.pokemons$[i].spriteUrl, this.pokemons$[i].type1, this.pokemons$[i].type2, this.pokemons$[i].move1, this.pokemons$[i].move2);
     }
     console.log(JSON.stringify(this.pokemonTeam));
+  }
+
+  deletePokemon(id){
+    console.log(id);
+    localStorage.removeItem(id.id);
   }
 
 

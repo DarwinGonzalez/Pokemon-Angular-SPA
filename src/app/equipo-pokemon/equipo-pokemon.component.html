@@ -1,11 +1,11 @@
 <h1>Equipo Pokémon</h1>
-<mat-grid-list cols="3" *ngFor="let item of pokemonTeam">
-    <mat-grid-tile>
+<mat-grid-list cols="3" rowHeight="3:1">
+    <mat-grid-tile *ngFor="let item of pokemonTeam;let i=index;">
         <mat-card class="example-card">
-            <mat-card-header>
-              <mat-card-title></mat-card-title>
-            </mat-card-header>
             <img src="../assets/images/pokeball.png" width="30%" height="30%">
+            <img [src]="pokemonTeam[i].getImage()">
+            <button mat-flat-button class="mat_buttom"color="warn" (click)="deletePokemon(item)">Eliminar</button>
         </mat-card>
     </mat-grid-tile>
 </mat-grid-list>
+
