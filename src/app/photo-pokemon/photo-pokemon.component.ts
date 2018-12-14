@@ -1,3 +1,4 @@
+import { Pokemon } from './../shared/pokemon';
 import { Component, OnInit } from '@angular/core';
 import { Params, ActivatedRoute } from '@angular/router';
 import { DataServiceService } from './../services/data-service.service';
@@ -15,6 +16,8 @@ export class PhotoPokemonComponent implements OnInit {
   moves1: Array<string> = [];
   moves2: Array<string> = [];
   img: string;
+  teamItem: Pokemon;
+  contadorTeam: number = 0;
 
   constructor(private route: ActivatedRoute, private data: DataServiceService) { }
 
@@ -91,6 +94,23 @@ export class PhotoPokemonComponent implements OnInit {
     this.getAbilities();
     this.frontImg();
     this.setParametersNull();
+  }
+
+  AddPokemonToTeam() {
+   this.teamItem = new Pokemon(this.id, this.pokemonName, this.img, this.types1[0], this.types2[0], this.moves1[0], this.moves2[0]);
+   console.log(this.teamItem);
+   this.contadorTeam++;
+   if((this.contadorTeam) <= 6){
+      if(!localStorage.getItem(this.id)){
+        localStorage.setItem(this.id, JSON.stringify(this.teamItem));
+      }
+      else {
+        alert("Este pokemon ha sido ya añadido a su equipo Pokemon");
+      }
+   }
+   else {
+    alert("Su equipo Pokemon ya tiene el máximo de 6 pokemons");
+   }
   }
 
 }

@@ -29,6 +29,7 @@ import {MatSelectModule} from '@angular/material/select';
 
 import 'hammerjs';
 import { PhotoPokemonComponent } from './photo-pokemon/photo-pokemon.component';
+import { EquipoPokemonComponent } from './equipo-pokemon/equipo-pokemon.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { PhotoPokemonComponent } from './photo-pokemon/photo-pokemon.component';
     CatalogComponent,
     PokemonComponent,
     PokemonListComponent,
-    PhotoPokemonComponent
+    PhotoPokemonComponent,
+    EquipoPokemonComponent
   ],
   imports: [
     BrowserModule,
