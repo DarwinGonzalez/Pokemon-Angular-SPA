@@ -1,6 +1,6 @@
 import { Pokemon } from './../shared/pokemon';
 import { Component, OnInit } from '@angular/core';
-import { Params, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { DataServiceService } from './../services/data-service.service';
 
 @Component({

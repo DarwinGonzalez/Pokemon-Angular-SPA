@@ -12,6 +12,7 @@ Entre sus funciones a destacar se encuentra la posibilidad de crear un equipo po
 * Ficha técnica en Pokédex
 ![](https://github.com/DarwinGonzalez/proyectoAngular/blob/master/src/assets/images/itempokedex.gif?raw=true)
 
+* To be continued.....
 
 ## Construido con  🛠️  📦
 
