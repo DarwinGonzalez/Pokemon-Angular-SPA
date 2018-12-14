@@ -103,6 +103,7 @@ export class PhotoPokemonComponent implements OnInit {
    if((this.contadorTeam) <= 6){
       if(!localStorage.getItem(this.id)){
         localStorage.setItem(this.id, JSON.stringify(this.teamItem));
+        alert("¡" + this.pokemonName.toUpperCase() + " esta muy contento de estar en tu equipo!")
       }
       else {
         alert("Este pokemon ha sido ya añadido a su equipo Pokemon");
