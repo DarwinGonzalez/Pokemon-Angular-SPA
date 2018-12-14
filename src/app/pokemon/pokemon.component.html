@@ -1,20 +1,24 @@
-<h1>Buscador de pokemóns</h1>
-<mat-card>
+<h1>Buscador de pokémon</h1>
+<mat-card class="example-card">
     <mat-card-content>Introduzca el ID del pokemón deseado:</mat-card-content>
   <mat-card-content>
     <form novalidate [formGroup]="idForm" (ngSubmit)="onSubmit()">
 
       <p>
-        <mat-form-field class="half-width">
+        <mat-form-field>
           <input matInput formControlName="id" type="number">
-          <mat-icon matSuffix>search</mat-icon>
+          <mat-hint>¡Debe introducir un número!</mat-hint>
         </mat-form-field>
+        <mat-icon matSuffix>search</mat-icon>
       </p>
-
-      <button type="submit" [disabled]="idForm.invalid" mat-button class="background-primary text-floral-white">Submit</button>
+      <button mat-flat-button color="primary" type="submit" [disabled]="idForm.invalid">Submit</button>
     </form>
+
+
   </mat-card-content>
 </mat-card>
+
+<br>
 
 <mat-card class="example-card" *ngIf="id.id != undefined">
   <mat-card-header>

@@ -1,18 +1,17 @@
-.playing {
-    transform: scale(1.1);
-    border-color: #ffc600;
-    box-shadow: 0 0 10px #ffc600;
-}
-
 .example-card {
     display: block;
-    margin: auto;
-}
-.example-card {
+    margin-left: auto;
+    margin-right: auto;
     overflow: hidden;
 }
 
 .pokeImg {
-    width: 100%;
-    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+
+.pokeName {
+    text-anchor: middle;
 }

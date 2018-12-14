@@ -13,7 +13,7 @@
     <form novalidate [formGroup]="consultaForm" (ngSubmit)="onSubmit()">
 
       <p>
-        <label for="nombre">Nombre:</label>
+        <label for="nombre">Nombre:*</label>
         <br>
         <mat-form-field class="half-width">
           <input matInput formControlName="nombre" type="text" required>
@@ -24,7 +24,7 @@
         <br>
         <br>
 
-        <label for="telefono">Apellidos:</label>
+        <label for="telefono">Apellidos*:</label>
         <br>
         <mat-form-field class="half-width">
           <input matInput formControlName="apellidos" type="text" required>
@@ -36,7 +36,7 @@
 
       <p>
 
-        <label for="telefono">Número teléfono:</label>
+        <label for="telefono">Número teléfono*:</label>
         <br>
         <mat-form-field class="half-width">
           <input matInput formControlName="telefono" type="tel" pattern="[0-9]*" required>
@@ -47,13 +47,14 @@
         <br>
         <br>
 
-        <label for="email">Correo Electrónico:</label>
+        <label for="email">Correo Electrónico*:</label>
         <br>
         <mat-form-field class="half-width">
           <input matInput formControlName="email" type="email" email required>
         </mat-form-field>
         <span [hidden]="!(erroresForm.email)">
-          {{erroresForm.email}}</span>
+            {{erroresForm.email}}</span>
+
       </p>
 
       <table class="form-size">
@@ -66,10 +67,10 @@
         <label for="email">¿Quieres dejar un comentario o sugerencia?: </label>
         <br>
         <mat-form-field class="full-width">
-          <textarea matInput formControlName="mensaje" rows=12></textarea>
+          <textarea matInput formControlName="mensaje"></textarea>
         </mat-form-field>
       </p>
-      <button type="submit" mat-button class="background-primary text-floral-white">Submit</button>
+      <button mat-flat-button color="primary" type="submit">Submit</button>
     </form>
 
   </div>

@@ -44,4 +44,35 @@ export class Pokemon {
     getMove2(){
         return this.move2;
     }
+
+    ///
+    setId(id) {
+        this.id = id;
+    }
+
+    setName(name) {
+        this.name = name;
+    }
+
+    setImage(img) {
+        this.spriteUrl = img;
+    }
+
+    setType1(t1) {
+        this.type1 = t1;
+    }
+
+    setType2(t2) {
+        this.type2 = t2;
+    }
+
+    setMove1(m1){
+        this.move1 = m1;
+    }
+
+    setMove2(m2){
+        this.move2 = m2;
+    }
+
+
 }
