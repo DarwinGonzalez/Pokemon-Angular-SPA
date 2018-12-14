@@ -7,9 +7,11 @@ Así pues, se trata de un prototipo de plataforma la cuál recoge datos de una A
 Entre sus funciones a destacar se encuentra la posibilidad de crear un equipo pokémon, catálogo de todos los pokémon disponibles en la API, ficha técnica de cada uno de los pokémon (nombre, ID, movimientos, tipo...), posibilidad de contacto mediante un formulario, formulario reactivo de búsqueda de pokémon mediante su ID de la pokédex,...
 
 * Catálogo pokémon
+
 ![](https://github.com/DarwinGonzalez/proyectoAngular/blob/master/src/assets/images/catalog.gif?raw=true)
 
 * Ficha técnica en Pokédex
+
 ![](https://github.com/DarwinGonzalez/proyectoAngular/blob/master/src/assets/images/itempokedex.gif?raw=true)
 
 * To be continued.....

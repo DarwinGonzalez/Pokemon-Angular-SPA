@@ -106,11 +106,11 @@ export class PhotoPokemonComponent implements OnInit {
         alert("¡" + this.pokemonName.toUpperCase() + " esta muy contento de estar en tu equipo!")
       }
       else {
-        alert("Este pokemon ha sido ya añadido a su equipo Pokemon");
+        alert("Este pokémon ha sido ya añadido a su equipo Pokémon");
       }
    }
    else {
-    alert("Su equipo Pokemon ya tiene el máximo de 6 pokemons");
+    alert("Su equipo Pokémon ya tiene el máximo de 6 pokémon");
    }
   }
 
