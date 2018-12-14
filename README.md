@@ -10,7 +10,7 @@ Entre sus funciones a destacar se encuentra la posibilidad de crear un equipo po
 ![](https://github.com/DarwinGonzalez/proyectoAngular/blob/master/src/assets/images/catalog.gif?raw=true)
 
 * Ficha técnica en Pokédex
-![]()
+![](https://github.com/DarwinGonzalez/proyectoAngular/blob/master/src/assets/images/itempokedex.gif?raw=true)
 
 
 ## Construido con  🛠️  📦
