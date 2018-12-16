@@ -49,10 +49,7 @@ export class PokemonComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.id = this.route.snapshot.params['id'];
-    // console.log(this.id);
-    // this.route.params.subscribe(params => this.id = params['id']);
-    // this.data.getPokemonImages(this.id).subscribe(data => this.pokemon$ = data["results"]);
+
   }
 
   crearFormulario() {

@@ -1,6 +1,9 @@
 <h1>Equipo Pokémon</h1>
+<p><button mat-flat-button class="mat_buttom" color="warn" (click)="deleteTeam()">Eliminar equipo</button>
+<button mat-flat-button class="mat_buttom" color="primary" (click)="genRandomTeam()">Equipo aleatorio</button></p>
+<br>
 <mat-grid-list cols="3" rowHeight="3:1">
-    <mat-grid-tile *ngFor="let item of pokemonTeam;let i=index;">
+    <mat-grid-tile *ngFor="let item of pokemonTeam;let i=index;" [@fadeInOut]>
         <mat-card class="example-card">
             <img src="../assets/images/pokeball.png" width="30%" height="30%">
             <img [src]="pokemonTeam[i].getImage()">
@@ -8,4 +11,5 @@
         </mat-card>
     </mat-grid-tile>
 </mat-grid-list>
+
 

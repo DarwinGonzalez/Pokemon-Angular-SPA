@@ -1,19 +1,34 @@
+import { DataServiceService } from './../services/data-service.service';
 import { Pokemon } from './../shared/pokemon';
 import { Component, OnInit } from '@angular/core';
-import { isNgTemplate } from '@angular/compiler';
+import { trigger, style, transition, animate, query, stagger ,state} from '@angular/animations';
 
 @Component({
   selector: 'app-equipo-pokemon',
   templateUrl: './equipo-pokemon.component.html',
-  styleUrls: ['./equipo-pokemon.component.scss']
+  styleUrls: ['./equipo-pokemon.component.scss'],
+  animations: [
+    trigger('fadeInOut', [
+      state('void', style({
+        opacity: 0
+      })),
+      transition('* <=> *', animate(1000)),
+    ]),
+  ]
 })
 export class EquipoPokemonComponent implements OnInit {
 
   pokemonTeam: Array<Pokemon> = [];
   pokemons$: Array<any> = [];
+  pokemonName: Array<string> = [];
+  types1: Array<string> = [];
+  types2: Array<string> = [];
+  moves1: Array<string> = [];
+  moves2: Array<string> = [];
+  img: Array<string> = [];
 
 
-  constructor() { }
+  constructor(private data: DataServiceService) { }
 
   ngOnInit() {
     console.log(this.obtainAllLocalStorage());
@@ -54,6 +69,53 @@ export class EquipoPokemonComponent implements OnInit {
       this.pokemonTeam.splice(index, 1);
     }
   }
+
+  deleteTeam() {
+    localStorage.clear();
+    this.pokemonTeam = [];
+  }
+
+  genRandomTeam(){
+    var randomIDs = [];
+    this.deleteTeam();
+    for(let i = 0; i < 6; i++){
+      randomIDs.push(Math.round(Math.random() * 644));
+    }
+
+    for (let i = 0; i < 6; i++) {
+      let auxID = randomIDs[i];
+      let auxName = this.getName(randomIDs[i]);
+      let auxImg = this.getImg(randomIDs[i]);
+      let auxType1 = this.getTypes(randomIDs[i])[0];
+      let auxType2 = this.getTypes(randomIDs[i])[1];
+      let auxMove1 = this.getAbilities(randomIDs[i])[0];
+      let auxMove2 = this.getAbilities(randomIDs[i])[1];
+      this.pokemonTeam[i] = new Pokemon(auxID, auxName, auxImg, auxType1, auxType2, auxMove1, auxMove2);
+    }
+
+  }
+
+  getName(id) {
+    this.data.getPokemonImages(id).subscribe(data => this.pokemonName = (data["forms"][0].name));
+    return this.pokemonName;
+  }
+
+  getTypes(id) {
+    this.data.getPokemonImages(id).subscribe(data => this.types1.push(data["types"][0]["type"].name));
+    this.data.getPokemonImages(id).subscribe(data => this.types2.push(data["types"][1]["type"].name));
+    return [this.types1, this.types2];
+  }
+
+  getAbilities(id) {
+    this.data.getPokemonImages(id).subscribe(data => this.moves1.push(data["moves"][0]["move"].name));
+    this.data.getPokemonImages(id).subscribe(data => this.moves2.push(data["moves"][1]["move"].name));
+    return [this.moves1, this.moves2];
+  }
+
+  getImg(id){
+    return "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + id +".png"
+  }
+
 
 
 }
