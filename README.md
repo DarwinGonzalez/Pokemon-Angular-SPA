@@ -9,7 +9,7 @@ Desarrollo de una SPA (Single page Application), dentro de la cual tenemos un si
 
 Así pues, se trata de un prototipo de plataforma la cuál recoge datos de una API pública de Pokémon, [PokeAPI](https://pokeapi.co/), y realiza una serie de acciones mediante el uso de componentes de Angular.
 
-Entre sus funciones a destacar se encuentra la posibilidad de crear un equipo pokémon, catálogo de todos los pokémon disponibles en la API, ficha técnica de cada uno de los pokémon (nombre, ID, movimientos, tipo...), posibilidad de contacto mediante un formulario, formulario reactivo de búsqueda de pokémon mediante su ID de la pokédex,...
+Entre sus funciones a destacar se encuentra la posibilidad de crear un equipo pokémon, catálogo de todos los pokémon disponibles en la API, ficha técnica de cada uno de los pokémon (nombre, ID, movimientos, tipo...), posibilidad de contacto mediante un formulario, formulario reactivo de búsqueda de pokémon mediante su ID de la pokédex, crear un equipo pokémon utilizando el LocalStorage, generar un equipo pokémon aleatorio,...
 
 * Catálogo pokémon <img src="https://github.com/DarwinGonzalez/proyectoAngular/blob/master/src/assets/images/pokeball.png?raw=true" width="20px" height="22px">
 
@@ -19,7 +19,13 @@ Entre sus funciones a destacar se encuentra la posibilidad de crear un equipo po
 
 ![](https://github.com/DarwinGonzalez/proyectoAngular/blob/master/src/assets/images/itempokedex.gif?raw=true)
 
-* To be continued.....
+* Agregar pokémon a un equipo (máx 6)
+
+![]()
+
+* Generar equipo pokémon aleatorio
+
+![]()
 
 ## Construido con  🛠️  📦
 
