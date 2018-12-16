@@ -5,11 +5,11 @@
 <img src="https://github.com/DarwinGonzalez/proyectoAngular/blob/master/src/assets/images/Angular_full_color_logo.png?raw=true" width="15%" height="15%">
 </p>
 
-Desarrollo de una SPA (Single page Application), en la cual tenemos un sidebar o barra lateral con la que podremos acceder a las diferentes partes y componentes de la misma, en función de las acciones de usuario.
+Desarrollo de una SPA (Single page Application), que cuenta con un sidebar o barra lateral con la que podremos acceder a las diferentes partes y componentes de la misma en función de las acciones de usuario.
 
-Así pues, se trata de un prototipo de plataforma, la cuál recoge datos de una API pública de Pokémon  [PokeAPI](https://pokeapi.co/), y realiza una serie de acciones mediante el uso de componentes de Angular.
+Así pues, se trata de un prototipo de plataforma que recoge datos de una API pública de Pokémon [PokeAPI](https://pokeapi.co/), y realiza una serie de acciones mediante el uso de componentes de Angular.
 
-Entre sus funciones a destacar se encuentra la posibilidad de crear un equipo pokémon, catálogo de todos los pokémon disponibles en la API, ficha técnica de cada uno de los pokémon (nombre, ID, movimientos, tipo...), posibilidad de contacto mediante un formulario, formulario reactivo de búsqueda de pokémon mediante su ID de la pokédex, crear un equipo pokémon utilizando el LocalStorage, generar un equipo pokémon aleatorio,...
+Entre sus funciones a destacar se encuentra la posibilidad de crear un equipo pokémon, catálogo de todos los pokémon disponibles en la API, ficha técnica de cada uno de los pokémon (nombre, ID, movimientos, tipo...), posibilidad de contacto mediante un formulario, formulario reactivo de búsqueda de pokémon mediante su ID de la pokédex, crear un equipo utilizando el LocalStorage, generar un equipo aleatorio,...
 
 * Catálogo pokémon <img src="https://github.com/DarwinGonzalez/proyectoAngular/blob/master/src/assets/images/pokeball.png?raw=true" width="20px" height="22px">
 
