@@ -19,13 +19,15 @@ Entre sus funciones a destacar se encuentra la posibilidad de crear un equipo po
 
 ![](https://github.com/DarwinGonzalez/proyectoAngular/blob/master/src/assets/images/itempokedex.gif?raw=true)
 
-* Agregar pokémon a un equipo (máx 6)
+* Agregar pokémon a un equipo (máx 6) <img src="https://github.com/DarwinGonzalez/proyectoAngular/blob/master/src/assets/images/pokeball.png?raw=true" width="20px" height="22px">
 
-![]()
+![](https://github.com/DarwinGonzalez/proyectoAngular/blob/master/src/assets/images/addPojkemon.gif?raw=true)
 
-* Generar equipo pokémon aleatorio
+* Generar equipo pokémon aleatorio <img src="https://github.com/DarwinGonzalez/proyectoAngular/blob/master/src/assets/images/pokeball.png?raw=true" width="20px" height="22px">
 
-![]()
+![](https://github.com/DarwinGonzalez/proyectoAngular/blob/master/src/assets/images/randomPokeTeam.gif?raw=true)
+
+* To be continued...
 
 ## Construido con  🛠️  📦
 
