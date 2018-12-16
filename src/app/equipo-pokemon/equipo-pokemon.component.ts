@@ -22,7 +22,7 @@ export class EquipoPokemonComponent implements OnInit {
   }
 
   obtainAllLocalStorage() {
-    let json: Array<JSON> = [] ;
+    let json: Array<JSON> = [];
     var values = [],
       keys = Object.keys(localStorage),
       i = keys.length;
@@ -31,24 +31,28 @@ export class EquipoPokemonComponent implements OnInit {
       values.push(localStorage.getItem(keys[i]));
     }
 
-    for(let i = 0; i < values.length; i++){
-      let aux= JSON.parse(values[i]);
+    for (let i = 0; i < values.length; i++) {
+      let aux = JSON.parse(values[i]);
       json.push(aux);
     }
     return json;
   }
 
   createPokemons() {
-
-    for(let i =0; i < this.pokemons$.length; i++){
+    for (let i = 0; i < this.pokemons$.length; i++) {
       this.pokemonTeam[i] = new Pokemon(this.pokemons$[i].id, this.pokemons$[i].name, this.pokemons$[i].spriteUrl, this.pokemons$[i].type1, this.pokemons$[i].type2, this.pokemons$[i].move1, this.pokemons$[i].move2);
     }
     console.log(JSON.stringify(this.pokemonTeam));
   }
 
-  deletePokemon(id){
+  deletePokemon(id) {
     console.log(id);
     localStorage.removeItem(id.id);
+    var index = this.pokemonTeam.indexOf(id);
+    console.log(index);
+    if (index > -1) {
+      this.pokemonTeam.splice(index, 1);
+    }
   }
 
 
