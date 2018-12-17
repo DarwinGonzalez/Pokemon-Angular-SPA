@@ -30,27 +30,22 @@ import { trigger, style, transition, animate, query, stagger } from '@angular/an
     ])
   ]
 })
+
 export class CatalogComponent implements OnInit {
 
   pokemons$: Array<any> = [];
-  pokemonId$: number[] = [];
-  urlImagen: string;
   id: string = "";
 
   constructor(private data: DataServiceService) { }
 
+  //Class catalog use DataServiceService function GetPokemonNames() to get all pokemons from API
   ngOnInit() {
     this.data.getPokemonNames().subscribe(data => this.pokemons$ = data["results"]);
-    console.log(this.id);
   }
 
-  addClass(id: any) {
-    this.id = id;
-  }
-
-  onHover(item) {
+  //This function returns the ID of the pokemon that has been clicked in catalog display
+  onItem(item) {
     this.id = ((item.url).split('/').splice(6, 7, 1))[0];
-    console.log(((item.url).split('/').splice(6, 7, 1))[0]);
     return this.id;
   }
 }
