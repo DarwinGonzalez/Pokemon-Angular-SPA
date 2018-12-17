@@ -10,9 +10,9 @@ import { Consulta } from '../shared/contacto';
 })
 
 export class ContactComponent implements OnInit {
+
   consultaForm: FormGroup;
   consulta: Consulta;
-
   consultarest: Consulta;
 
   erroresForm = {
@@ -26,7 +26,6 @@ export class ContactComponent implements OnInit {
     'email': ''
 
   };
-
 
   mensajesError = {
 
@@ -63,7 +62,9 @@ export class ContactComponent implements OnInit {
 
   };
 
-  constructor(private fb: FormBuilder, private consultaService: ConsultaServiceService) { this.crearFormulario(); }
+  constructor(private fb: FormBuilder, private consultaService: ConsultaServiceService) {
+    this.crearFormulario();
+  }
 
   ngOnInit() {
   }
@@ -88,14 +89,12 @@ export class ContactComponent implements OnInit {
     this.consultaService.enviarConsulta(this.consultarest)
       .subscribe(consulta => { this.consultarest = consulta });
 
-    console.log(this.consulta);
     this.consultaForm.reset();
   }
 
   onCambioValor(data?: any) {
     if (!this.consultaForm) { return; } const form = this.consultaForm;
     for (const field in this.erroresForm) {
-      // Se borrarán los mensajes de error previos
       this.erroresForm[field] = '';
       const control = form.get(field);
       if (control && control.dirty && !control.valid) {
