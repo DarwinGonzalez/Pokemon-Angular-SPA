@@ -1,11 +1,8 @@
 import { DataServiceService } from './../services/data-service.service';
-import { Pokemon } from './../shared/pokemon';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Params, ActivatedRoute } from '@angular/router';
-import { switchMap } from 'rxjs/operators';
-import { trigger, style, transition, animate, keyframes, query, stagger } from '@angular/animations';
-
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { trigger, style, transition, animate, query, stagger } from '@angular/animations';
 
 @Component({
   selector: 'app-pokemon',
@@ -35,13 +32,13 @@ import { trigger, style, transition, animate, keyframes, query, stagger } from '
     ])
   ]
 })
+
 export class PokemonComponent implements OnInit {
 
   pokemon$: Array<any> = [];
   types$: Array<any> = [];
   idForm: FormGroup;
   id: string;
-  name: string = "";
 
 
   constructor(private fb: FormBuilder, private route: ActivatedRoute, private data: DataServiceService) {
@@ -49,7 +46,6 @@ export class PokemonComponent implements OnInit {
   }
 
   ngOnInit() {
-
   }
 
   crearFormulario() {
@@ -60,22 +56,21 @@ export class PokemonComponent implements OnInit {
 
   onSubmit() {
     this.id = this.idForm.value;
-    console.log(this.id);
     this.idForm.reset();
-    console.log(this.id["id"]);
     this.getName();
     this.getTypes();
     this.types$ = [];
   }
 
+  //Function that use the service to get the Name from the API
   getName() {
     this.data.getPokemonImages(Object.values(this.id)[0]).subscribe(data => this.pokemon$ = data["forms"]);
   }
 
+  //Function that use the service to get the Types from the API
   getTypes() {
     this.data.getPokemonImages(Object.values(this.id)[0]).subscribe(data => this.types$.push(data["types"][0]["type"]));
     this.data.getPokemonImages(Object.values(this.id)[0]).subscribe(data => this.types$.push(data["types"][1]["type"]));
   }
-
 
 }

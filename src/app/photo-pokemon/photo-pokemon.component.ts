@@ -107,7 +107,6 @@ export class PhotoPokemonComponent implements OnInit {
   //Function that adds the pokemon to the LocalStorage, only if it is not inside yet
   AddPokemonToTeam() {
    this.teamItem = new Pokemon(this.id, this.pokemonName, this.img, this.types1[0], this.types2[0], this.moves1[0], this.moves2[0]);
-   console.log(this.teamItem);
    this.contadorTeam++;
    if((this.contadorTeam) <= 6){
       if(!localStorage.getItem(this.id)){
