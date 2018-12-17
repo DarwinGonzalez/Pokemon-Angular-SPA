@@ -1,7 +1,7 @@
 import { DataServiceService } from './../services/data-service.service';
 import { Pokemon } from './../shared/pokemon';
 import { Component, OnInit } from '@angular/core';
-import { trigger, style, transition, animate, query, stagger ,state} from '@angular/animations';
+import { trigger, style, transition, animate, state} from '@angular/animations';
 
 @Component({
   selector: 'app-equipo-pokemon',
@@ -16,6 +16,7 @@ import { trigger, style, transition, animate, query, stagger ,state} from '@angu
     ]),
   ]
 })
+
 export class EquipoPokemonComponent implements OnInit {
 
   pokemonTeam: Array<Pokemon> = [];
@@ -31,11 +32,11 @@ export class EquipoPokemonComponent implements OnInit {
   constructor(private data: DataServiceService) { }
 
   ngOnInit() {
-    console.log(this.obtainAllLocalStorage());
     this.pokemons$ = this.obtainAllLocalStorage();
     this.createPokemons();
   }
 
+  //Function that obtain all data from the LocalStorage and return a JSON Object with the Pokemons
   obtainAllLocalStorage() {
     let json: Array<JSON> = [];
     var values = [],
@@ -53,28 +54,30 @@ export class EquipoPokemonComponent implements OnInit {
     return json;
   }
 
+  //Function used to create de Pokemon's Object and fill it with the data obtained from the LocalStorage
   createPokemons() {
     for (let i = 0; i < this.pokemons$.length; i++) {
       this.pokemonTeam[i] = new Pokemon(this.pokemons$[i].id, this.pokemons$[i].name, this.pokemons$[i].spriteUrl, this.pokemons$[i].type1, this.pokemons$[i].type2, this.pokemons$[i].move1, this.pokemons$[i].move2);
     }
-    console.log(JSON.stringify(this.pokemonTeam));
   }
 
+  //Function use to delete one Pokemon from the team when the button "Eliminar" is pressed
   deletePokemon(id) {
-    console.log(id);
     localStorage.removeItem(id.id);
     var index = this.pokemonTeam.indexOf(id);
-    console.log(index);
+
     if (index > -1) {
       this.pokemonTeam.splice(index, 1);
     }
   }
 
+  //Function used to clear de LocalStorage (delete all pokemons from the team)
   deleteTeam() {
     localStorage.clear();
     this.pokemonTeam = [];
   }
 
+  //Function to generate random pokemons and build a team with all of them (6 pokemon/team)
   genRandomTeam(){
     var randomIDs = [];
     this.deleteTeam();
@@ -92,30 +95,31 @@ export class EquipoPokemonComponent implements OnInit {
       let auxMove2 = this.getAbilitiesAPI(randomIDs[i])[1];
       this.pokemonTeam[i] = new Pokemon(auxID, auxName, auxImg, auxType1, auxType2, auxMove1, auxMove2);
     }
-
   }
 
+  //Function that returns the Name of the Pokemon given an ID
   getNameAPI(id) {
     this.data.getPokemonImages(id).subscribe(data => this.pokemonName = (data["forms"][0].name));
     return this.pokemonName;
   }
 
+  //Function that returns the Types of the Pokemon given an ID
   getTypesAPI(id) {
     this.data.getPokemonImages(id).subscribe(data => this.types1.push(data["types"][0]["type"].name));
     this.data.getPokemonImages(id).subscribe(data => this.types2.push(data["types"][1]["type"].name));
     return [this.types1, this.types2];
   }
 
+  //Function that returns the Moves of the Pokemon given an ID
   getAbilitiesAPI(id) {
     this.data.getPokemonImages(id).subscribe(data => this.moves1.push(data["moves"][0]["move"].name));
     this.data.getPokemonImages(id).subscribe(data => this.moves2.push(data["moves"][1]["move"].name));
     return [this.moves1, this.moves2];
   }
 
+  //Function that returns the Img of the Pokemon given an ID
   getImgAPI(id){
     return "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + id +".png"
   }
-
-
 
 }
